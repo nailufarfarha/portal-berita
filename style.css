@@ -1,0 +1,51 @@
+body {
+  margin: 0px 50px 0px 50px;
+}
+
+.navbar-search {
+  margin: auto;
+  width: 650px;
+}
+
+.navbar-index {
+  background-color: #00649a;
+}
+
+.navbar-index .nav-link {
+  color: white;
+}
+
+.button-icon {
+  border: none;
+  background-color: white;
+}
+
+.container-login {
+  background-color: white;
+  width: 380px;
+  margin: 80px auto;
+  padding: 30px 20px;
+}
+
+.container-login h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00649a;
+}
+
+#f-login {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#login {
+  background: #00649a;
+  color: white;
+  font-size: 11pt;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
