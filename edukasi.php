@@ -1,10 +1,6 @@
 <?php
 require 'connect.php';
-$sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='ED1'");
-$sql2 = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='ED2'");
-$sql3 = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='ED3'");
-$sql4 = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='ED4'");
-$sql5 = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='ED5'");
+$sql = mysqli_query($conn,"SELECT * FROM news WHERE kategori='ed'");
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +23,7 @@ $sql5 = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='ED5'");
 <div class="container-top">
     <nav class="navbar">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="img/ctn.png" alt="logo" width="180" height="90" /></a>
+    <a class="navbar-brand" href="index.php"><img src="img/ctn.png" alt="logo" width="180" height="90" /></a>
     <div class="navbar-search">
     <form class="d-flex " role="search">
         <input class="form-control me-2" type="search" placeholder="Cari berita hari ini" aria-label="Search">
@@ -75,49 +71,34 @@ $sql5 = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='ED5'");
 </nav>
 
 <!-- ISI BERITA -->
-<div class="row row-tengah">
-    <div class="col-4">
+<div class="row berita-edu">
     <?php while($data = mysqli_fetch_array($sql)){
     ?>
-        <img src="" class="img-top" alt="...">
-        <h5><?php echo $data['title'];?></h5>
-        <p><?php echo $data['isi'];?></p>
+        <!-- <img src="" class="img-top" alt="..."> -->
+        <h5 href=".."><?php echo $data['title'];?></h5>
+        <p><?php echo $data['isi'];?><a href="..">...baca selengkapnya.</a></p>
     <?php } ?>
-    </div>
-    <div class="col-4">
-    <?php while($data = mysqli_fetch_array($sql2)){
-    ?>
-        <img src="" class="img-top" alt="...">
-        <h5><?php echo $data['title'];?></h5>
-        <p><?php echo $data['isi'];?></p>
-    <?php } ?>
-    </div>
-    <div class="col-4">
-    <?php while($data = mysqli_fetch_array($sql3)){
-    ?>
-        <img src="" class="img-top" alt="...">
-        <h5><?php echo $data['title'];?></h5>
-        <p><?php echo $data['isi'];?></p>
-    <?php } ?>
+</div>
+
+<!-- FOOTER -->
+<div class="container">
+    <div class="row row-footer">
+        <div class="col-3">
+            <img class="img-logo" src="img/logo.png" alt="">
+        </div>
+        <div class="col-5">
+            <h1>ConnectIT NEWS</h1>
+        </div>
+        <div class="col-4">
+            <h5>CONTACT US</h5>
+            <a href="https://www.instagram.com"><img src="img/logoig.png" alt="Instagram" width="45px"></a>
+            <a href="https://www.linkedin.com"><img src="img/logolinkedln.png" alt="Linkedln" width="45px"></a>
+            <a href="http://www.youtube.com"><img src="img/logoytb.png" alt="Youtube" width="45px"></a>
+            <a href="http://www.facebook.com"><img src="img/logofb.png" alt="Facebook" width="45px"></a>
+            <a href="http://www.twitter.com"><img src="img/logotwt.png" alt="Twitter" width="45px"></a>
+        </div>
     </div>
 </div>
 
-<!-- ISI BERITA -->
-<div class="row row-awal">
-  <div class="col-6">
-  <?php while($data = mysqli_fetch_array($sql4)){
-    ?>
-        <img src="" class="img-top" alt="...">
-        <h5><?php echo $data['title'];?></h5>
-        <p><?php echo $data['isi'];?></p>
-    <?php } ?>
-  </div>
-  <div class="col-6">
-  <?php while($data = mysqli_fetch_array($sql5)){
-    ?>
-        <img src="" class="img-top" alt="...">
-        <h5><?php echo $data['title'];?></h5>
-        <p><?php echo $data['isi'];?></p>
-    <?php } ?>
-  </div>
-</div>
+</body>
+</html>

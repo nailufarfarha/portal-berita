@@ -1,6 +1,5 @@
 <?php
 require 'connect.php';
-$sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='IN1'");
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@ $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='IN1'");
 <div class="container-top">
     <nav class="navbar">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="img/ctn.png" alt="logo" width="180" height="90" /></a>
+    <a class="navbar-brand" href="index.php"><img src="img/ctn.png" alt="logo" width="180" height="90" /></a>
     <div class="navbar-search">
     <form class="d-flex " role="search">
         <input class="form-control me-2" type="search" placeholder="Cari berita hari ini" aria-label="Search">
@@ -72,41 +71,54 @@ $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='IN1'");
 
 <!-- ISI BERITA -->
 <div class="row row-awal">
-  <div class="col-5">
-    <h3 class="title">TRENDING NOW!</h3>
-    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-  </div>
-  <?php while($data = mysqli_fetch_array($sql)){
+  <div class="col-6">
+  <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='EN3'");
+  while($data = mysqli_fetch_array($sql)){
     ?>
-  <div class="col-7">
-    <img src="..." class="img-top" alt="...">
-    <h5 class="card-title"><?php echo $data['title'];?></h5>
-    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h3 class="title">TRENDING NOW!</h3>
+    <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/ED53/production/_96155706_mediaitem96155705.jpg" class="img-top" alt="...">
+    <h5><?php echo $data['title'];?></h5>
+    <p><?php echo $data['isi'];?><a href="..">...baca selengkapnya.</a></p>
+    <?php } ?>
+  </div>
+  <div class="col-6 mt-5">
+  <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='OR1'");
+  while($data = mysqli_fetch_array($sql)){
+    ?>
+    <img src="https://cdn0-production-images-kly.akamaized.net/tH9yS10KTMkDtIbCb-egzDcfqyw=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2901456/original/005649600_1567582421-20190903-Logo-Piala-Dunia-2022-Qatar-Resmi-Diluncurkan-AP-6.jpg" class="img-top" alt="...">
+    <h5><?php echo $data['title'];?></h5>
+    <p><?php echo $data['isi']; ?><a href="..">...baca selengkapnya.</a></p>
   </div>
   <?php } ?>
 </div>
 
-<!-- SECTION 2 -->
 <div class="row row-tengah">
-    <div class="col-3">
-        <img src="" class="img-top" alt="...">
-        <h5>TITLE</h5>
-        <p></p>
+    <div class="col-4">
+    <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='MK3'");
+    while($data = mysqli_fetch_array($sql)){
+    ?>
+        <img src="https://asset.kompas.com/crops/0guYsQD15LhtHa0YNd9VRxsYasA=/0x0:1000x667/750x500/data/photo/2020/10/03/5f7837d5344c8.jpg" class="img-top t-tengah" alt="...">
+        <h5><?php echo $data['title'];?></h5>
+        <p><?php echo $data['isi']; ?><a href="..">...baca selengkapnya.</a></p>
+    <?php } ?>
     </div>
-    <div class="col-3">
-        <img src="" class="img-top" alt="...">
-        <h5>TITLE</h5>
-        <p></p>
+    <div class="col-4">
+    <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='EN1'");
+    while($data = mysqli_fetch_array($sql)){
+    ?>
+        <img src="https://cdn0-production-images-kly.akamaized.net/nsOXdJ1HktOqC_WQq4JGa3RPxSY=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4262035/original/015927400_1671087206-Picsart_22-12-15_12-23-13-798.jpg" class="img-top  t-tengah" alt="...">
+        <h5><?php echo $data['title'];?></h5>
+        <p><?php echo $data['isi']; ?><a href="..">...baca selengkapnya.</a></p>
+    <?php } ?>
     </div>
-    <div class="col-3">
-        <img src="" class="img-top" alt="...">
-        <h5>TITLE</h5>
-        <p></p>
-    </div>
-    <div class="col-3">
-        <img src="" class="img-top" alt="...">
-        <h5>TITLE</h5>
-        <p></p>
+    <div class="col-4">
+    <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='KS2'");
+    while($data = mysqli_fetch_array($sql)){
+    ?>
+        <img src="https://asset.kompas.com/crops/YKs8vxtiY3bRm9aCEfEYWvBJgv4=/0x12:983x667/750x500/data/photo/2020/08/01/5f252288079e4.jpg" class="img-top  t-tengah" alt="...">
+        <h5><?php echo $data['title'];?></h5>
+        <p><?php echo $data['isi']; ?><a href="..">...baca selengkapnya.</a></p>
+    <?php } ?>
     </div>
 </div>
 
@@ -114,64 +126,97 @@ $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='IN1'");
     <div class="col-6">
         <table>
             <tr>
+            <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='PL2'");
+            while($data = mysqli_fetch_array($sql)){
+            ?>
                 <th>
-                    <img src="" class="img" alt="...">
+                    <img src="https://akcdn.detik.net.id/visual/2018/08/31/2ae3c978-4069-41f9-a855-734e9ce558c1_169.jpeg?w=650" class="img-ra" alt="...">
                 </th>
                 <th>
-                    <h5>TITLE</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h5><?php echo $data['title'];?></h5>
                 </th>
+            <?php } ?>
             </tr>
             <tr>
+            <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='ED1'");
+            while($data = mysqli_fetch_array($sql)){
+            ?>
                 <th>
-                    <img src="" class="img" alt="...">
+                    <img src="https://statik.tempo.co/data/2018/06/26/id_714716/714716_720.jpg" class="img-ra" alt="...">
                 </th>
                 <th>
-                    <h5>TITLE</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h5><?php echo $data['title'];?></h5>
                 </th>
+            <?php } ?>
             </tr>
             <tr>
+            <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='MK5'");
+            while($data = mysqli_fetch_array($sql)){
+            ?>
                 <th>
-                    <img src="" class="img" alt="...">
+                    <img src="https://awsimages.detik.net.id/visual/2022/06/30/menu-maka-di-korea-selatan_169.jpeg?w=715&q=90" class="img-ra" alt="...">
                 </th>
                 <th>
-                    <h5>TITLE</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h5><?php echo $data['title'];?></h5>
                 </th>
+            <?php } ?>
             </tr>
             <tr>
+            <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='KS4'");
+            while($data = mysqli_fetch_array($sql)){
+            ?>
                 <th>
-                    <img src="" class="img" alt="...">
+                    <img src="https://totabuan.news/wp-content/uploads/2022/12/master_b059X6l2Pl_815.jpg" class="img-ra" alt="...">
                 </th>
                 <th>
-                    <h5>TITLE</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h5><?php echo $data['title'];?></h5>
                 </th>
+            <?php } ?>
             </tr>
             <tr>
+            <?php $sql = mysqli_query($conn,"SELECT * FROM news WHERE kode_news='OR2'");
+            while($data = mysqli_fetch_array($sql)){
+            ?>
                 <th>
-                    <img src="" class="img" alt="...">
+                    <img src="https://img.inews.co.id/media/822/files/inews_new/2021/11/11/praveenmelati.jpg" class="img-ra" alt="...">
                 </th>
                 <th>
-                    <h5>TITLE</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h5><?php echo $data['title'];?></h5>
                 </th>
+            <?php } ?>
             </tr>
         </table>
     </div>
     <div class="col-6">
         <h4>REKOMENDASI UNTUK ANDA</h4>
         <div class="list-group">
-            <a href="" style="color: #000" class="list-item-action">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
-            <a href="" style="color: #000" class="list-item-action">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
-            <a href="" style="color: #000" class="list-item-action">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
-            <a href="" style="color: #000" class="list-item-action">Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+            <a href="" class="list-item-action">Cara Hilangkan Dark Spot Demi Kulit Cerah Merata</a>
+            <a href="" class="list-item-action">9 Kampus Milik BUMN buat Mahasiswa, Prospek Kerjanya Tinggi</a>
+            <a href="" class="list-item-action">Instagram Perkenalkan Candid Stories</a>
+            <a href="" class="list-item-action">Langka di Indonesia, Jurusan Kriminologi Hanya Ada di 3 Kampus</a>
         </div>
     </div>
 </div>
 
 <!-- FOOTER -->
+<div class="container">
+    <div class="row row-footer">
+        <div class="col-3">
+            <img class="img-logo" src="img/logo.png" alt="">
+        </div>
+        <div class="col-5">
+            <h1>ConnectIT NEWS</h1>
+        </div>
+        <div class="col-4">
+            <h5>CONTACT US</h5>
+            <a href="https://www.instagram.com"><img src="img/logoig.png" alt="Instagram" width="45px"></a>
+            <a href="https://www.linkedin.com"><img src="img/logolinkedln.png" alt="Linkedln" width="45px"></a>
+            <a href="http://www.youtube.com"><img src="img/logoytb.png" alt="Youtube" width="45px"></a>
+            <a href="http://www.facebook.com"><img src="img/logofb.png" alt="Facebook" width="45px"></a>
+            <a href="http://www.twitter.com"><img src="img/logotwt.png" alt="Twitter" width="45px"></a>
+        </div>
+    </div>
+</div>
     
 </body>
 </html>

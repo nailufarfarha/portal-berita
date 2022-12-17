@@ -2,6 +2,33 @@ body {
   margin: 0px 50px 0px 50px;
 }
 
+.title {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+.img-top {
+  width: 550px;
+  height: 300px;
+}
+
+.t-tengah {
+  width: 375px;
+  height: 255px;
+}
+
+.img-ra {
+  width: 150px;
+  height: 100px;
+  padding-top: 20px;
+}
+
+.list-item-action {
+  padding-top: 10px;
+}
 .navbar-search {
   margin: auto;
   width: 650px;
@@ -31,6 +58,26 @@ body {
   text-align: center;
   margin-bottom: 20px;
   color: #00649a;
+}
+
+.row-footer {
+  margin-top: 50px;
+  padding-top: 15px;
+  background-color: #00649a;
+}
+
+.row-footer h1 {
+  padding-top: 10px;
+  color: white;
+}
+
+.row-footer h5 {
+  color: white;
+}
+
+.row-footer .img-logo {
+  width: 130px;
+  height: 90px;
 }
 
 #f-login {

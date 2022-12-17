@@ -41,7 +41,7 @@ if(isset($_POST['tambahberita'])){
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-            <a class="navbar-brand" href="#"><img src="img/ctn.png" alt="logo" width="180" height="90" /></a>
+            <a class="navbar-brand" href="admin.php"><img src="img/ctn.png" alt="logo" width="180" height="90" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -94,10 +94,6 @@ if(isset($_POST['tambahberita'])){
                             <option value="pol">Politik</option>
                             <option value="kes">Kesehatan</option>
                             <option value="mkn">Makanan</option>
-                            <option value="inter">Internasional</option>
-                            <option value="jbr">Jabar</option>
-                            <option value="jtg">Jateng</option>
-                            <option value="jtm">Jatim</option>
                         </select>
                     </td>
                 </tr>

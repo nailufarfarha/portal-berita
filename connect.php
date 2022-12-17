@@ -14,7 +14,7 @@ if(isset($_POST['updateberita'])){
     $isi = $_POST['isi'];
     $kategori = $_POST['kategori'];
 
-    $update = mysqli_query($conn,"UPDATE news set kode_news='$kode_news', title='$title', isi='$isi', kategori='$kategori'");
+    $update = mysqli_query($conn,"UPDATE news SET title='$title', isi='$isi', kategori='$kategori' WHERE kode_news='$kode_news'") or die(mysqli_error());
     if($update){
         header('location:http://localhost/MSIB-ZENIUS/admin.php');
     }else{

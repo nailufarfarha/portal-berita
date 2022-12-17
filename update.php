@@ -53,7 +53,6 @@ require 'connect.php';
         $kode_news = $_GET['kode_news'];
         $sql = "SELECT * FROM news";
         $query = mysqli_query($conn, $sql);
-        $i = 1;
         while ($data = mysqli_fetch_array($query)) {
         ?>
 
@@ -75,18 +74,14 @@ require 'connect.php';
                     <td>Kategori Berita</td>
                     <td>
                         <!-- Dropdown -->
-                        <select class="form-select" id='kategori' name='kategori' value="<?php echo $data['kategori'] ?> aria-label="Default select example">
+                        <select class="form-select" id='kategori' name='kategori' aria-label="Default select example">
                             <option selected>Kategori</option>
-                            <option value="ed">Edukasi</option>
-                            <option value="ent">Entertainment</option>
-                            <option value="or">Olahraga</option>
-                            <option value="pol">Politik</option>
-                            <option value="kes">Kesehatan</option>
-                            <option value="mkn">Makanan</option>
-                            <option value="inter">Internasional</option>
-                            <option value="jbr">Jabar</option>
-                            <option value="jtg">Jateng</option>
-                            <option value="jtm">Jatim</option>
+                            <option <?php if($data['kategori']=='ed'){echo "selected";} ?> value="ed">Edukasi</option>
+                            <option <?php if($data['kategori']=='ent'){echo "selected";} ?> value="ent">Entertainment</option>
+                            <option <?php if($data['kategori']=='or'){echo "selected";} ?> value="or">Olahraga</option>
+                            <option <?php if($data['kategori']=='pol'){echo "selected";} ?> value="pol">Politik</option>
+                            <option <?php if($data['kategori']=='kes'){echo "selected";} ?> value="kes">Kesehatan</option>
+                            <option <?php if($data['kategori']=='mkn'){echo "selected";} ?> value="mkn">Makanan</option>
                         </select>
                     </td>
                 </tr>
